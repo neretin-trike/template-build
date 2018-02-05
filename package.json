@@ -1,0 +1,28 @@
+{
+  "name": "template-build",
+  "version": "1.0.0",
+  "description": "Шаблон для быстрой развертки front-end проекта",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neretin-trike/template-build.git"
+  },
+  "keywords": [
+    "template",
+    "webpack",
+    "pug",
+    "stylus",
+    "fast"
+  ],
+  "author": "Neretin Artem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neretin-trike/template-build/issues"
+  },
+  "homepage": "https://github.com/neretin-trike/template-build#readme"
+}

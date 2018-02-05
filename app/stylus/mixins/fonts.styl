@@ -1,0 +1,47 @@
+font-weight = {
+    thin: 100, 
+    extraLight: 200, 
+    light: 300, 
+    regular: 400, 
+    medium: 500, 
+    semibold: 600, 
+    bold: 700, 
+    extrabold: 800, 
+    black: 900
+}
+
+font(fontName, weight = 'regular', style = normal) 
+    @font-face
+        font-family fontName
+        src url("/app/fonts/"+fontName+"/"+fontName+weight+".woff2") format("woff2"),
+            url("/app/fonts/"+fontName+"/"+fontName+weight+".woff") format("woff"),
+            url("/app/fonts/"+fontName+"/"+fontName+weight+".ttf") format("truetype")
+        font-weight font-weight[weight]
+        font-style style
+
+font-name = 'Montserrat'
+font(font-name, 'thin')
+
+font(font-name, font-name+'-light', 300)
+font(font-name, font-name+'-regular', 400)
+
+font-name = 'Raleway'
+font(font-name, font-name+'-regular', 400)
+font(font-name, font-name+'-medium', 500)
+font(font-name, font-name+'-semibold', 600)
+font(font-name, font-name+'-bold', 700)
+font(font-name, font-name+'-extrabold', 800)
+
+font-name = 'Roboto'
+font(font-name, font-name+'-regular', 400)
+
+
+// font(font-name, font-name+'-thin', 100)
+// font(font-name, font-name+'-extralight', 200)
+// font(font-name, font-name+'-light', 300)
+// font(font-name, font-name+'-regular', 400)
+// font(font-name, font-name+'-medium', 500)
+// font(font-name, font-name+'-semibold', 600)
+// font(font-name, font-name+'-bold', 700)
+// font(font-name, font-name+'-extrabold', 800)
+// font(font-name, font-name+'-black', 900)

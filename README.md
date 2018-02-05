@@ -1,31 +1,37 @@
 ## Файловая структура front-end проекта
 
+    * - заполняется/создается при генерации  
+
     /template-build  
     ├── /app  
     │   ├── /assets  
-    │   │   ├── css  
-    │   │   ├── fonts  
-    │   │   ├── images  
-    │   │   └── js  
+    │   │   ├── /css  
+    │   │   ├── /fonts  
+    │   │   ├── /images  
+    │   │   └── /js
+    │   │       ├── common.js
+    |   |       ├── index.js  
+    |   |       └── bundle.js *    
     │   ├── /blocks  
     │   ├── /pug  
-    │   │   ├── pages.pug  
+    │   │   ├── blocks.pug  
     │   │   └── index.pug  
     │   ├── /stylus  
     │   │   ├── /mixins  
-    │   │   │   ├── mixins.styl  
+    │   │   │   ├── common.styl  
     │   │   │   └── fonts.styl  
     │   │   ├── main.styl  
     │   │   ├── style.styl  
     │   │   └── variables.styl  
     │   ├── favicon.ico  
-    │   └── index.html  
-    ├── /dist  
+    │   └── index.html * 
+    ├── /dist * 
     │   ├── /css  
     │   ├── /fonts  
     │   ├── /images  
-    │   ├── /js  
-    │   └── index.html  
+    │   ├── /js
+    |   |   └── bundle.js  
+    │   └── index.html 
     ├── /libs  
     ├── /node_modules  
     ├── .gitignore  
