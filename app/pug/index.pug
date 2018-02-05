@@ -1,0 +1,46 @@
+include blocks.pug
++includes()
+
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        title LibraryStrict
+    body
+        header.header
+            .logo
+                .logo__wrap
+                    img.logo__img(src='images/logo.png')
+            .profile
+                .profile__avatar
+                    img.profile__img(src='images/avatar.jpg')
+                .profile__name  Константин К.
+                button.profile__arrow
+            form.search
+                input.search__text(type='text' placeholder='Введите навзание книги, автора или жанр')
+                input.search__go(type='submit')
+            nav.menu
+                ul.menu__list
+                    li.menu__item
+                        a.link.menu__link(href='#') Книги
+                    li.menu__item
+                        a.link.menu__link(href='#') Жанры
+                    li.menu__item
+                        a.link.menu__link(href='#') Авторы
+                    li.menu__item
+                        a.link.menu__link(href='#') Инфо
+        footer.footer
+            .copyright Все права сохранены (c) 2018 LibraryStrict
+            .social-media
+                .social-media__text Контакт со мной
+                    a.social-media__link.social-media__link_github(href="#")
+                    a.social-media__link.social-media__link_mail(href="#")
+                    a.social-media__link.social-media__link_vk(href="#")
+                
+        //- +header()
+        //- +main()
+        //- +footer()
+        link(rel="stylesheet" href="css/style.css")
+    
