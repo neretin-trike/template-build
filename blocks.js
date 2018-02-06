@@ -297,7 +297,7 @@ function parseForTree(command){
 // parseForTree('b1+(b2>b21+b22+b23)+b8+b10+(b3>b31+b32)+(b4>b41+b42)')
 // parseForTree('b1+(b2>b21+b22+b23)+b8>b10+(b3>b31+b32)+(b4>b41+b42)')
 // parseForTree('b2>b21+(b22>b211+(b212>b2121+b2122)+b23)+b5');
-parseForTree('b2>b21+(b22>b211+(b212>b2121+b2122)+b23)+b5+(b3>b31+b32)+b4+(b6>b61+(b63>b631+b632)+b62)');
+// parseForTree('b2>b21+(b22>b211+(b212>b2121+b2122)+b23)+b5+(b3>b31+b32)+b4+(b6>b61+(b63>b631+b632)+b62)');
 
 // parseForTree('b2>b21+(b212>b2121+b2122)+(b6>b61+(b63>b631+b632)+b62)');
 
@@ -313,7 +313,7 @@ parseForTree('b2>b21+(b22>b211+(b212>b2121+b2122)+b23)+b5+(b3>b31+b32)+b4+(b6>b6
 
 // parseForTree('header>+main')
 
-// parseForTree('header+((main>home>slogan)+about)+footer');
+parseForTree('header+((main2>home>slogan)+about)+footer');
 
 // parseForTree('b1>b12^(b2+b3)');
 
@@ -331,7 +331,7 @@ if (parseAchieved == true) {
 	rl.on('line', (line) => {
 		if (line=='y'){
 			// createAnotherFiles();
-			createImportFile(__dirname+'/app','../')
+			createImportFile(__dirname+'/app/','../blocks/')
 			rl.close();
 		}
 		else{
@@ -350,8 +350,8 @@ function createAnotherFiles(){
 }
 
 const importPaths = {
-	pug: 'include ',
-	styl: '@import ',
+	pug: ' include ',
+	styl: ' @import ',
 };
 
 function createImportFile(dir,prefix) {
@@ -359,13 +359,19 @@ function createImportFile(dir,prefix) {
 	Object.keys(importPaths).forEach(ext => {
 
 		var fileSource = '';
+		var quote = '"';
+		if (ext === 'pug'){
+			fileSource = 'mixin importBlocks()\n'
+			quote = '';
+		}
 
 		paths.forEach(function(item) {
-			fileSource += importPaths[ext] + prefix + item + '.' + ext + '\n'
+			var name = item.match(/[^\/]*$/);
+			fileSource += importPaths[ext] + quote + prefix + item + '/' + name + quote + '\n'
 		});
 
 		const filename = `import.${ext}`;
-		const filePath = path.join(dir, filename);
+		const filePath = path.join(dir+ext, filename);
 
 		promises.push(
 				new Promise((resolve, reject) => {

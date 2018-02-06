@@ -1,4 +1,4 @@
-import '../../stylus/style.styl';
+import '../../styl/style.styl';
 import '../../pug/index.pug';
 
 // var template = require("pug!./app/pug/index.pug");
