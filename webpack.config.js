@@ -21,6 +21,12 @@ const productionPath = merge([
       path: PATHS.prod,
       filename: 'js/bundle.js',
     },
+    plugins: [
+      new webpack.optimize.UglifyJsPlugin({
+        test: /\.js$/,
+        minimize: true
+      }),
+    ]
   }
 ]);
 
@@ -35,13 +41,13 @@ const developPath = merge([
 
 const common = merge([
   {
-    entry: ['./app/assets/js/index.js'],
+    entry: './app/assets/js/index.js',
     plugins: [
       new HtmlWebpackPlugin({
         template: './app/pug/index.pug',
       }),
-      new webpack.HotModuleReplacementPlugin()
-    ]
+      new webpack.HotModuleReplacementPlugin(),
+    ],
   },
   pug(),
   files()
