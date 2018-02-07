@@ -3,27 +3,24 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var plugins = [];
-
 const PATHS = {
   app: path.join(__dirname, 'app'),
   build: path.join(__dirname, 'build') // не использую
 };
 
-plugins.push(
-  new HtmlWebpackPlugin({
-    template: './app/pug/index.pug',
-  }),
-  new webpack.HotModuleReplacementPlugin()
-);
-
-module.exports = {
+const common = {
   entry: ['./app/assets/js/index.js'],
   output: {
     path: path.resolve(__dirname, 'app'),
     filename: 'assets/js/bundle.js',
     publicPath: ''
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './app/pug/index.pug',
+    }),
+    new webpack.HotModuleReplacementPlugin()
+  ],
   module: {
     rules: [
         {
@@ -36,6 +33,9 @@ module.exports = {
         },
         {
           test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
+          options:{
+            name: 'dist/images/[name].[ext]'
+          },
           loader: 'file-loader?name=app/assets/[name].[ext]'
         },
         {
@@ -49,9 +49,24 @@ module.exports = {
         },
     ]
   },
-  plugins: plugins,
+};
+
+const developmentConfig = {
   devServer:{
     stats: 'errors-only',
     port: 9000
+  }
+};
+
+module.exports = function(env){
+  if (env === 'production'){
+      return common;
+  }
+  if (env === 'development'){
+      return Object.assign(
+        {},
+        common,
+        developmentConfig
+      );
   }
 }

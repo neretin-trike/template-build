@@ -18,9 +18,9 @@
     "webpack-dev-server": "^2.11.1"
   },
   "scripts": {
-    "dev": "webpack-dev-server --hot --inline",
-    "build": "webpack -p",
-    "watch": "webpack --watch"
+    "dev": "webpack-dev-server --hot --inline --env development",
+    "prod": "webpack --env production",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
