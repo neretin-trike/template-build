@@ -1,6 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var merge = require('webpack-merge');
 
@@ -8,21 +7,35 @@ const pug = require('./webpack/pug')
 const devServer = require('./webpack/devserver')
 const stylus = require('./webpack/stylus')
 const css = require('./webpack/css')
-const images = require('./webpack/images')
+const files = require('./webpack/files')
+const extractCSS = require('./webpack/css.extract')
 
 const PATHS = {
-  app: path.join(__dirname, 'app'),
-  prod: path.join(__dirname, 'dir') // не использую
+  dev: path.join(__dirname, 'app'),
+  prod: path.join(__dirname, 'dist') 
 };
+
+const productionPath = merge([
+  {
+    output: {
+      path: PATHS.prod,
+      filename: 'js/bundle.js',
+    },
+  }
+]);
+
+const developPath = merge([
+  {
+    output: {
+      path: PATHS.dev,
+      filename: 'assets/js/bundle.js',
+    },
+  }
+]);
 
 const common = merge([
   {
     entry: ['./app/assets/js/index.js'],
-    output: {
-      path: path.resolve(__dirname, 'app'),
-      filename: 'assets/js/bundle.js',
-      publicPath: ''
-    },
     plugins: [
       new HtmlWebpackPlugin({
         template: './app/pug/index.pug',
@@ -30,20 +43,25 @@ const common = merge([
       new webpack.HotModuleReplacementPlugin()
     ]
   },
-  pug()
+  pug(),
+  files()
 ]);
 
 module.exports = function(env){
   if (env === 'production'){
-      return common;
+    return merge([
+      productionPath,
+      common,
+      extractCSS()
+    ]);
   }
   if (env === 'development'){
-      return merge([
-        common,
-        devServer(),
-        css(),
-        stylus(),
-        images()
-      ]);
+    return merge([
+      developPath,
+      common,
+      devServer(),
+      css(),
+      stylus()
+    ]);
   }
 }

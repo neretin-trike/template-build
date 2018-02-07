@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'Lato';
+  src: url("/assets/fonts/Lato/Lato-black.woff2") format("woff2"), url("/app/assets/fonts/Lato/Lato-black.woff") format("woff"), url("/app/assets/fonts/Lato/Lato-black.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url("/assets/fonts/Lato/Lato-bold.woff2") format("woff2"), url("/app/assets/fonts/Lato/Lato-bold.woff") format("woff"), url("/app/assets/fonts/Lato/Lato-bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url("/assets/fonts/Lato/Lato-light.woff2") format("woff2"), url("/app/assets/fonts/Lato/Lato-light.woff") format("woff"), url("/app/assets/fonts/Lato/Lato-light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url("/assets/fonts/Lato/Lato-regular.woff2") format("woff2"), url("/app/assets/fonts/Lato/Lato-regular.woff") format("woff"), url("/app/assets/fonts/Lato/Lato-regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  font-weight: 400;
+  font-family: 'Lato';
+  color: #555;
+  font-size: 1.4rem;
+}
+position relative {
+  max-width: 192rem;
+  margin: 0 auto;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  border: 0.1rem solid #a2a1bf;
+}
+button {
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+input {
+  outline: none;
+  border: none;
+}
+a {
+  text-decoration: none;
+  color: #555;
+}
+h1,
+h2,
+h3,
+p,
+blockquote,
+figure {
+  padding: 0;
+  margin: 0;
+}
+ul {
+  background-image: url(../images/logo.png);
+}

@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "1eb234bd60cf45812a31"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "bf2256cdb8c6c85be657"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -740,7 +740,7 @@ module.exports = __webpack_require__(1);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__stylus_style_styl__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__stylus_style_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__stylus_style_styl__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pug_index_pug__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pug_index_pug__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pug_index_pug___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__pug_index_pug__);
 
 
@@ -759,14 +759,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var pug = __webpack_require__(4);
-
-function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;var pug_indent = [];
-pug_html = pug_html + "\u003C!DOCTYPE html\u003E\n\u003Chtml\u003E\n  \u003Chead\u003E\n    \u003Cmeta charset=\"UTF-8\"\u003E\n    \u003Cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003E\n    \u003Cmeta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\"\u003E\n    \u003Ctitle\u003ELibraryStrict\u003C\u002Ftitle\u003E\n  \u003C\u002Fhead\u003E\n  \u003Cbody\u003E\n    \u003Cheader class=\"header\"\u003E\n      \u003Cdiv class=\"logo\"\u003E\n        \u003Cdiv class=\"logo__wrap\"\u003E\u003Cimg" + (" class=\"logo__img\""+pug.attr("src", __webpack_require__(6), true, true)) + "\u003E\u003C\u002Fdiv\u003E\n      \u003C\u002Fdiv\u003E\n      \u003Cdiv class=\"profile\"\u003E\n        \u003Cdiv class=\"profile__avatar\"\u003E\u003Cimg class=\"profile__img\" src=\"images\u002Favatar.jpg\"\u003E\u003C\u002Fdiv\u003E\n        \u003Cdiv class=\"profile__name\"\u003E Кастырин К.\u003C\u002Fdiv\u003E\n        \u003Cbutton class=\"profile__arrow\"\u003E\u003C\u002Fbutton\u003E\n      \u003C\u002Fdiv\u003E\n      \u003Cform class=\"search\"\u003E\n        \u003Cinput class=\"search__text\" type=\"text\" placeholder=\"Введите навзание книги, автора или жанр\"\u003E\n        \u003Cinput class=\"search__go\" type=\"submit\"\u003E\n      \u003C\u002Fform\u003E\n      \u003Cnav class=\"menu\"\u003E\n        \u003Cul class=\"menu__list\"\u003E\n          \u003Cli class=\"menu__item\"\u003E\u003Ca class=\"link menu__link\" href=\"#\"\u003EКниги\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n          \u003Cli class=\"menu__item\"\u003E\u003Ca class=\"link menu__link\" href=\"#\"\u003EЖанры\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n          \u003Cli class=\"menu__item\"\u003E\u003Ca class=\"link menu__link\" href=\"#\"\u003EАвторы\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n          \u003Cli class=\"menu__item\"\u003E\u003Ca class=\"link menu__link\" href=\"#\"\u003EИнфо\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n        \u003C\u002Ful\u003E\n      \u003C\u002Fnav\u003E\n    \u003C\u002Fheader\u003E\n    \u003Cfooter class=\"footer\"\u003E\n      \u003Cdiv class=\"copyright\"\u003EВсе права сохранены (c) 2018 LibraryStrict\u003C\u002Fdiv\u003E\n      \u003Cdiv class=\"social-media\"\u003E\n        \u003Cdiv class=\"social-media__text\"\u003EКонтакт со мной\u003Ca class=\"social-media__link social-media__link_github\" href=\"#\"\u003E\u003C\u002Fa\u003E\u003Ca class=\"social-media__link social-media__link_mail\" href=\"#\"\u003E\u003C\u002Fa\u003E\u003Ca class=\"social-media__link social-media__link_vk\" href=\"#\"\u003E\u003C\u002Fa\u003E\u003C\u002Fdiv\u003E\n      \u003C\u002Fdiv\u003E\n    \u003C\u002Ffooter\u003E\n  \u003C\u002Fbody\u003E\n\u003C\u002Fhtml\u003E";;return pug_html;};
-module.exports = template;
+module.exports = __webpack_require__.p + "images/logo.png";
 
 /***/ }),
 /* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var pug = __webpack_require__(5);
+
+function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;var pug_indent = [];
+pug_html = pug_html + "\u003C!DOCTYPE html\u003E\n\u003Chtml\u003E\n  \u003Chead\u003E\n    \u003Cmeta charset=\"UTF-8\"\u003E\n    \u003Cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"\u003E\n    \u003Cmeta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\"\u003E\n    \u003Ctitle\u003ELibraryStrict\u003C\u002Ftitle\u003E\n  \u003C\u002Fhead\u003E\n  \u003Cbody\u003E\n    \u003Cheader class=\"header\"\u003E\n      \u003Cdiv class=\"logo\"\u003E\n        \u003Cdiv class=\"logo__wrap\"\u003E\u003Cimg" + (" class=\"logo__img\""+pug.attr("src", __webpack_require__(3), true, true)) + "\u003E\u003C\u002Fdiv\u003E\n      \u003C\u002Fdiv\u003E\n      \u003Cdiv class=\"profile\"\u003E\n        \u003Cdiv class=\"profile__avatar\"\u003E\u003Cimg class=\"profile__img\" src=\"images\u002Favatar.jpg\"\u003E\u003C\u002Fdiv\u003E\n        \u003Cdiv class=\"profile__name\"\u003E Кастырин К.\u003C\u002Fdiv\u003E\n        \u003Cbutton class=\"profile__arrow\"\u003E\u003C\u002Fbutton\u003E\n      \u003C\u002Fdiv\u003E\n      \u003Cform class=\"search\"\u003E\n        \u003Cinput class=\"search__text\" type=\"text\" placeholder=\"Введите навзание книги, автора или жанр\"\u003E\n        \u003Cinput class=\"search__go\" type=\"submit\"\u003E\n      \u003C\u002Fform\u003E\n      \u003Cnav class=\"menu\"\u003E\n        \u003Cul class=\"menu__list\"\u003E\n          \u003Cli class=\"menu__item\"\u003E\u003Ca class=\"link menu__link\" href=\"#\"\u003EКниги\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n          \u003Cli class=\"menu__item\"\u003E\u003Ca class=\"link menu__link\" href=\"#\"\u003EЖанры\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n          \u003Cli class=\"menu__item\"\u003E\u003Ca class=\"link menu__link\" href=\"#\"\u003EАвторы\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n          \u003Cli class=\"menu__item\"\u003E\u003Ca class=\"link menu__link\" href=\"#\"\u003EИнфо\u003C\u002Fa\u003E\u003C\u002Fli\u003E\n        \u003C\u002Ful\u003E\n      \u003C\u002Fnav\u003E\n    \u003C\u002Fheader\u003E\n    \u003Cfooter class=\"footer\"\u003E\n      \u003Ccite class=\"copyright\"\u003EВсе права сохранены (c) 2018 LibraryStrict\u003C\u002Fcite\u003E\n      \u003Cdiv class=\"social-media\"\u003E\n        \u003Cdiv class=\"social-media__text\"\u003EКонтакт со мной\u003Ca class=\"social-media__link social-media__link_github\" href=\"#\"\u003E\u003C\u002Fa\u003E\u003Ca class=\"social-media__link social-media__link_mail\" href=\"#\"\u003E\u003C\u002Fa\u003E\u003Ca class=\"social-media__link social-media__link_vk\" href=\"#\"\u003E\u003C\u002Fa\u003E\u003C\u002Fdiv\u003E\n      \u003C\u002Fdiv\u003E\n    \u003C\u002Ffooter\u003E\n  \u003C\u002Fbody\u003E\n\u003C\u002Fhtml\u003E";;return pug_html;};
+module.exports = template;
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1000,7 +1006,7 @@ function pug_rethrow(err, filename, lineno, str){
     throw err;
   }
   try {
-    str = str || __webpack_require__(5).readFileSync(filename, 'utf8')
+    str = str || __webpack_require__(6).readFileSync(filename, 'utf8')
   } catch (ex) {
     pug_rethrow(err, null, lineno)
   }
@@ -1027,16 +1033,10 @@ function pug_rethrow(err, filename, lineno, str){
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "images/logo.png";
 
 /***/ })
 /******/ ]);
