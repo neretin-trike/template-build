@@ -1,4 +1,5 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = function(paths) {
     return {
@@ -15,14 +16,14 @@ module.exports = function(paths) {
                                 loader: 'css-loader',
                                 options: {
                                     minimize: true,
-                                    sourceMap: true
-                                }
+                                    sourceMap: true,
+                                },
                             }, 
                             {
                                 loader: 'postcss-loader',
                                 options: {
                                     plugins: [
-                                        require('postcss-discard-duplicates')
+                                        require('postcss-discard-duplicates'),
                                     ],
                                     sourceMap: true
                                 }
@@ -53,6 +54,12 @@ module.exports = function(paths) {
         },
         plugins: [
             new ExtractTextPlugin('css/main.css'),
+            // new StyleLintPlugin({
+            //     configFile: '.stylelintrc.json',
+            //     files: 'dist/css/main.css',
+            //     failOnError: true,
+            //     quiet: false,
+            //   })
         ],
     };
 };

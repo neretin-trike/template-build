@@ -4,7 +4,8 @@
   "description": "Шаблон для быстрой развертки front-end проекта",
   "main": "index.js",
   "dependencies": {
-    "bootstrap": "^4.0.0"
+    "bootstrap": "^4.0.0",
+    "stylelint": "^8.4.0"
   },
   "devDependencies": {
     "colors": "^1.1.2",
@@ -17,6 +18,8 @@
     "pug": "^2.0.0-rc.4",
     "pug-loader": "^2.3.0",
     "style-loader": "^0.20.1",
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint-webpack-plugin": "^0.10.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "webpack": "^3.10.0",
@@ -26,7 +29,8 @@
   "scripts": {
     "dev": "webpack-dev-server --hot --inline --env development",
     "prod": "webpack --env production",
-    "del": "rm -r dist"
+    "del": "rm -r dist",
+    "stylelint": "stylelint dist/css/main.css || true"
   },
   "repository": {
     "type": "git",
