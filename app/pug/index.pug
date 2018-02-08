@@ -9,35 +9,41 @@ html
         meta(http-equiv="X-UA-Compatible" content="ie=edge")
         title LibraryStrict
     body
-        header.header
-            .logo
-                .logo__wrap
-                    img.logo__img(src=require('../assets/images/logo.png'))
-            .profile
-                .profile__avatar
-                    img.profile__img(src='images/avatar.jpg')
-                .profile__name  Кастырин К.
-                button.profile__arrow
-            form.search
-                input.search__text(type='text' placeholder='Введите навзание книги, автора или жанр')
-                input.search__go(type='submit')
-            nav.menu
-                ul.menu__list
-                    li.menu__item
-                        a.link.menu__link(href='#') Книги
-                    li.menu__item
-                        a.link.menu__link(href='#') Жанры
-                    li.menu__item
-                        a.link.menu__link(href='#') Авторы
-                    li.menu__item
-                        a.link.menu__link(href='#') Инфо
+        header.header(class='container')
+            .row
+                .logo(class='col-2') 
+                    .logo__wrap
+                        img.logo__img(src=require('../assets/images/logo.png'))
+                .profile(class='ml-right')
+                    .profile__wrap(class='d-flex')
+                        .profile__avatar
+                            img.profile__img(src='images/avatar.jpg')
+                        .profile__name  Кастырин К.
+                        button.profile__arrow ar
+            .row
+                form.search(class='col-12')
+                    input.search__text(type='text' placeholder='Введите навзание книги, автора или жанр')
+                    input.search__go(type='submit')
+            .row
+                nav.menu(class='col-5')
+                    ul.menu__list(class='d-flex justify-content-around')
+                        li.menu__item
+                            a.link.menu__link(href='#') Книги
+                        li.menu__item
+                            a.link.menu__link(href='#') Жанры
+                        li.menu__item
+                            a.link.menu__link(href='#') Авторы
+                        li.menu__item
+                            a.link.menu__link(href='#') Инфо
         footer.footer
-            cite.copyright Все права сохранены (c) 2018 LibraryStrict
-            .social-media
-                .social-media__text Контакт со мной
-                    a.social-media__link.social-media__link_github(href="#")
-                    a.social-media__link.social-media__link_mail(href="#")
-                    a.social-media__link.social-media__link_vk(href="#")
+            .container
+                .row
+                    cite.copyright(class='col-5') Все права сохранены (c) 2018 LibraryStrict 
+                    .social-media(class='ml-auto col-4')
+                        .social-media__text Контакт со мной
+                            a.social-media__link.social-media__link_github(href="#")
+                            a.social-media__link.social-media__link_mail(href="#")
+                            a.social-media__link.social-media__link_vk(href="#")
         //- +header()
         //- +main()
         //- +footer()
