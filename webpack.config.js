@@ -1,7 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var merge = require('webpack-merge');
+
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 const pug = require('./webpack/pug')
 const devServer = require('./webpack/devserver')
@@ -28,7 +30,8 @@ const productionPath = merge([
       }),
       new webpack.optimize.CommonsChunkPlugin({
         name: 'common'
-      })
+      }),
+      new HardSourceWebpackPlugin()
     ]
   }
 ]);
@@ -37,7 +40,7 @@ const developPath = merge([
   {
     output: {
       path: PATHS.dev,
-      filename: 'assets/js/bundle.js',
+      filename: 'assets/js/[name].js',
     },
   }
 ]);
@@ -51,7 +54,7 @@ const common = merge([
       new HtmlWebpackPlugin({
         template: './app/pug/index.pug',
       }),
-      new webpack.HotModuleReplacementPlugin(),
+      new webpack.HotModuleReplacementPlugin()
     ],
   },
   pug(),
