@@ -19,6 +19,15 @@ module.exports = function(paths) {
                                 }
                             }, 
                             {
+                                loader: 'postcss-loader',
+                                options: {
+                                    plugins: [
+                                        require('postcss-discard-duplicates')
+                                    ],
+                                    sourceMap: true
+                                }
+                            },
+                            {
                                 loader: 'stylus-loader'
                             }
                         ]
@@ -43,7 +52,7 @@ module.exports = function(paths) {
             ],
         },
         plugins: [
-            new ExtractTextPlugin('css/[name].css'),
+            new ExtractTextPlugin('css/main.css'),
         ],
     };
 };
