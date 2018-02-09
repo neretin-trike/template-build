@@ -23,14 +23,6 @@ module.exports = function() {
                             },
                         },
                     ],
-                },
-                {
-                    test: /\.(ttf|eot|woff|woff2)$/,
-                    loader: 'file-loader?name=fonts/[name].[ext]'
-                },
-                {
-                    test: /\.(mp3|wav)$/,
-                    loader: 'file-loader?name=music/[name].[ext]'
                 }
             ]
         }
