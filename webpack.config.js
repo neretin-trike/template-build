@@ -33,7 +33,7 @@ const productionConfig = merge([
       new webpack.optimize.CommonsChunkPlugin({
         name: 'common'
       }),
-      new HardSourceWebpackPlugin()
+      // new HardSourceWebpackPlugin()
     ]
   }
 ]);

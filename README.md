@@ -38,3 +38,6 @@
     ├── block.js  
     ├── package.json  
     └── yarn.lock  
+
+### Схема зависимостей файлов и модулей
+![alt-текст](https://image.ibb.co/h6ejyx/image.jpg)
