@@ -1,6 +1,8 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var StyleLintPlugin = require('stylelint-webpack-plugin');
 
+var autoprefixer = require('autoprefixer');
+
 module.exports = function(paths) {
     return {
         module: {
@@ -24,6 +26,9 @@ module.exports = function(paths) {
                                 options: {
                                     plugins: [
                                         require('postcss-discard-duplicates'),
+                                        autoprefixer({
+                                            browsers:['ie >= 8', 'last 4 version'],
+                                        })
                                     ],
                                     sourceMap: true
                                 }
