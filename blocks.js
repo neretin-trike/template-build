@@ -23,7 +23,7 @@ var dir = BLOCKS_DIR;
 // default content for files in new block
 const fileSources = {
 	pug: `mixin {blockName}()\n\t.{blockName}\n\t\t| {blockName}\n`,
-	styl: `{blockName} \t\n\tdisplay block\n`,
+	styl: `.{blockName} \t\n\tdisplay block\n`,
 	// js	: `// .{blockName} scripts goes here`
 };
 
@@ -313,7 +313,7 @@ function parseForTree(command){
 
 // parseForTree('header>+main')
 
-parseForTree('header+((main2>home>slogan)+about)+footer');
+// parseForTree('header+((main>home>slogan)+about)+footer');
 
 // parseForTree('b1>b12^(b2+b3)');
 
@@ -321,7 +321,7 @@ parseForTree('header+((main2>home>slogan)+about)+footer');
 
 // parseForTree('asd>asd^(asd2+asd3)')
 
-// parseForTree(blockNameFromCli);
+parseForTree(blockNameFromCli);
 
 console.log(paths);
 
@@ -330,7 +330,7 @@ if (parseAchieved == true) {
 	rl.prompt();
 	rl.on('line', (line) => {
 		if (line=='y'){
-			// createAnotherFiles();
+			createAnotherFiles();
 			createImportFile(__dirname+'/app/','../blocks/')
 			rl.close();
 		}
@@ -350,8 +350,8 @@ function createAnotherFiles(){
 }
 
 const importPaths = {
-	pug: ' include ',
-	styl: ' @import ',
+	pug: 'include ',
+	styl: '@import ',
 };
 
 function createImportFile(dir,prefix) {
@@ -361,7 +361,6 @@ function createImportFile(dir,prefix) {
 		var fileSource = '';
 		var quote = '"';
 		if (ext === 'pug'){
-			fileSource = 'mixin importBlocks()\n'
 			quote = '';
 		}
 
@@ -371,17 +370,37 @@ function createImportFile(dir,prefix) {
 		});
 
 		const filename = `import.${ext}`;
-		const filePath = path.join(dir+ext, filename);
+		const filePath = path.join(dir, ext, filename);
 
 		promises.push(
 				new Promise((resolve, reject) => {
-					fs.writeFile(filePath, fileSource, 'utf8', err => {
-						if (err) {
-							reject(`ERR>>> Failed to create a file '${filePath}'`.red);
+
+					fs.stat(filePath, err => {
+						if(err == null) {
+
+							fs.appendFile(filePath, '\n' + fileSource, 'utf8', err => {
+								if (err) {
+									reject(`ERR>>> Failed to update a file '${filePath}'`.red);
+								} else {
+									resolve();
+								}
+							});
+
+						} else if(err.code == 'ENOENT') {
+
+							fs.writeFile(filePath, fileSource, 'utf8', err => {
+								if (err) {
+									reject(`ERR>>> Failed to create a file '${filePath}'`.red);
+								} else {
+									resolve();
+								}
+							});
+							
 						} else {
-							resolve();
+							console.log('Some other error: ', err.code);
 						}
 					});
+
 				})
 		);
 	});
